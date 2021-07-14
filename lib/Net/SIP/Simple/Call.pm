@@ -524,7 +524,7 @@ sub receive {
 	if ( $method eq 'BYE' || $method eq 'CANCEL' ) {
 	    # tear down
 	    $self->cleanup;
-	    invoke_callback( $param->{recv_bye},$param);
+	    invoke_callback( $param->{recv_bye},$param,$packet);
 	    # everything else already handled by Net::SIP::Endpoint::Context
 
 	} elsif ( $method eq 'ACK' || $method eq 'INVITE' ) {
